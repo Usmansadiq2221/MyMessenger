@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/myFavDark"
+    tools:context=".Activities.ChatActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/background_file"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/_chatBackButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="0.025"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/_chatProfilePic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/image_back_file"
+            android:padding="2dp"
+            android:src="@drawable/profile_placeholder"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/Circular"
+            app:strokeColor="@color/myFavDark"
+            app:strokeWidth="3dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/_chatUsername"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeMinTextSize="24sp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:scrollHorizontally="true"
+            android:textColor="@color/myFavPink"
+            android:textStyle="bold"
+            app:autoSizeMaxTextSize="20sp"
+            app:autoSizeTextType="uniform" />
+
+        <ImageView
+            android:id="@+id/_chatVCallIcon"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            app:srcCompat="@drawable/call_list_videocam_24"
+            tools:ignore="VectorDrawableCompat" />
+    </LinearLayout>
+
+    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+        android:id="@+id/_preMessagesView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:shimmer_demo_angle="20"
+        app:shimmer_demo_child_count="15"
+        app:shimmer_demo_grid_child_count="2"
+        app:shimmer_demo_layout="@layout/message_loading_layout"
+        app:shimmer_demo_layout_manager_type="linear_vertical" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/_cancelChatImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:foregroundGravity="right"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/_chatImage"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/message_sent_item"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                app:shapeAppearanceOverlay="@style/imageMessageShape"
+                app:srcCompat="@drawable/placeholder"
+                app:strokeColor="@color/myFavLight"
+                app:strokeWidth="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/chat_edittext_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/_messageInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableLeft="@drawable/keyboard_icon"
+                    android:drawablePadding="8dp"
+                    android:elegantTextHeight="true"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:hint="Message"
+                    android:inputType="textMultiLine"
+                    android:maxHeight="250dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:textColor="@color/myFavPink"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/_imageMessage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="2dp"
+                    app:srcCompat="@drawable/ic_baseline_photo_camera_24" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/_sendAlMessage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/send_message_background"
+                android:clickable="true"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                app:srcCompat="@drawable/ic_baseline_access_alarm_24"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/_sendMessage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/send_message_background"
+                android:clickable="true"
+                android:paddingLeft="5dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                app:srcCompat="@drawable/ic_baseline_send_24"
+                tools:ignore="VectorDrawableCompat" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TimePicker
+            android:id="@+id/_timePickerOnline"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/myFavLight"
+            android:elevation="10dp"
+            android:headerBackground="@drawable/background_file"
+            android:numbersBackgroundColor="@color/myFavPink"
+            android:numbersSelectorColor="@color/myFavDark"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/_setOnlineTimerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="5dp"
+        android:text="Set"
+        android:textColor="@color/myFavPink"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3" />
+
+    <ImageView
+        android:id="@+id/_cancelOTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+        app:srcCompat="@drawable/ic_baseline_cancel_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

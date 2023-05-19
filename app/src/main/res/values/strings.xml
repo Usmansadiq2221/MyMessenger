@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">My Messenger</string>
+    <string name="interstitialAd_string">ca-app-pub-8385601672345207/4719356511</string>
+    <string name="bannerAd_string">ca-app-pub-8385601672345207/6603299737</string>
+    <string name="nativeAdvanceAd_string">ca-app-pub-8385601672345207/8467029838</string>
+</resources>

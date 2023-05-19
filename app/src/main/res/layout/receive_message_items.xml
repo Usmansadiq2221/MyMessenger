@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/message_receive_item"
+        android:gravity="left"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/_receiveImage"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/message_receive_item"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:shapeAppearanceOverlay="@style/imageMessageShape"
+            app:srcCompat="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/_receiveMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="3dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="3dp"
+            android:text="TextView"
+            android:textColor="@color/myFavDark"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/_receiveMessageTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="2dp"
+            android:text="00:00"
+            android:textColor="@color/myFavDark"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/_rImgDellProgress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:indeterminateTint="@color/myFavPink"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout9"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout9"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/_isSeen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/myFavDark"
+        android:textSize="11sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout9"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
+
+    <View
+        android:id="@+id/_receiveViewItem"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.15"
+        android:background="@color/myFavLight"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

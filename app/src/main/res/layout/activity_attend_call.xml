@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.AttendCallActivity">
+
+    <WebView
+        android:id="@+id/_webView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/_aEndCall"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="42dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/endcallicon" />
+
+    <ImageView
+        android:id="@+id/_aMicBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/_aEndCall"
+        app:layout_constraintEnd_toStartOf="@+id/_aEndCall"
+        app:srcCompat="@drawable/btn_unmute_normal" />
+
+    <ImageView
+        android:id="@+id/_aVideoBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/_aEndCall"
+        app:layout_constraintStart_toEndOf="@+id/_aEndCall"
+        app:layout_constraintTop_toTopOf="@+id/_aEndCall"
+        app:srcCompat="@drawable/btn_video_normal" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/attend_call_detail_bg"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/_aCallProfile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/image_back_file"
+            android:padding="2dp"
+            android:src="@drawable/profile_placeholder"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/Circular"
+            app:strokeColor="@color/myFavDark"
+            app:strokeWidth="3dp"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/_aCallName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="username"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/_aCallTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="00:00:00"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/_aCallControls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="_aEndCall,_aMicBtn,_aVideoBtn" />
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/_aCallLoadingGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

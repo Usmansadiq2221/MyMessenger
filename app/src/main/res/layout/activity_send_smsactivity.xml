@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/myFavDark"
+    android:orientation="vertical"
+    tools:context=".Activities.SendSMSActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/_messageLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/myFavPink"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:scrollbars="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/clicked_background_file"
+                android:gravity="center"
+                android:text="Timer SMS"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/_sTimelineText"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/option_background_file"
+                android:gravity="center"
+                android:text="Timeline"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/_sMessengerText"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/option_background_file"
+                android:gravity="center"
+                android:text="Messenger"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/_sCallText"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/option_background_file"
+                android:gravity="center"
+                android:text="Calls"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/_enterContactNo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/myFavLight"
+            android:drawableLeft="@drawable/ic_baseline_perm_contact_calendar_24"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:hint="Enter Contact no"
+            android:inputType="text"
+            android:paddingLeft="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <ListView
+            android:id="@+id/_contactList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/_messageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/_enterSms"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_background"
+            android:drawableLeft="@drawable/ic_keyboard_icon"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="Enter Message"
+            android:inputType="textPersonName"
+            android:paddingLeft="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <ImageView
+            android:id="@+id/_sendSms"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/send_message_background"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            app:srcCompat="@drawable/ic_baseline_send_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/_optionsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#121B30"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="2dp"
+            android:background="#DFDFDF"
+            android:elevation="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:paddingLeft="14dp"
+            android:text="Send to..."
+            android:textColor="#10123E"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/_sendtoWhatsapp"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="2dp"
+            android:background="#DFDFDF"
+            android:elevation="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Whatsapp"
+            android:textColor="#10123E"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/_sendToSms"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="2dp"
+            android:background="#DFDFDF"
+            android:elevation="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="SMS"
+            android:textColor="#10123E"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TimePicker
+            android:id="@+id/_timePicker"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/myFavLight"
+            android:elevation="10dp"
+            android:headerBackground="@drawable/background_file"
+            android:numbersBackgroundColor="@color/myFavPink"
+            android:numbersSelectorColor="@color/myFavDark"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/_setSMSTimerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="5dp"
+        android:text="Set"
+        android:textColor="@color/myFavPink"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3" />
+
+    <ImageView
+        android:id="@+id/_cancelSTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+        app:srcCompat="@drawable/ic_baseline_cancel_24" />
+
+    <!--Added Toggle Button to set the alarm on or off-->
+    <!--ByDefault toggleButton is set to false-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

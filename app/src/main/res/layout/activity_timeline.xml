@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/myFavDark"
+    android:orientation="vertical"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activities.TimelineActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/myFavPink"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingTop="12dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="12dp"
+        android:scrollbars="horizontal">
+
+        <TextView
+            android:id="@+id/_tTimerSmsText"
+            android:layout_width="105dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/option_background_file"
+            android:gravity="center"
+            android:text="Timer SMS"
+            android:textColor="@color/myFavPink"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/clicked_background_file"
+            android:gravity="center"
+            android:text="Timeline"
+            android:textColor="@color/myFavPink"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/_tMessengerText"
+            android:layout_width="105dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/option_background_file"
+            android:gravity="center"
+            android:text="Messenger"
+            android:textColor="@color/myFavPink"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/_postProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="12dp"
+                android:background="@drawable/image_back_file"
+                android:padding="3dp"
+                android:src="@drawable/enter_profile_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/Circular"
+                app:strokeColor="@color/myFavDark"
+                app:strokeWidth="3dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/_postDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="12dp"
+                android:ems="10"
+                android:hint="what are you thinking?"
+                android:inputType="textMultiLine"
+                android:maxHeight="250dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/myFavPink"
+                android:textColorHint="#FADECE"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/_postImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/message_sent_item"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:shapeAppearanceOverlay="@style/imageMessageShape"
+            app:srcCompat="@drawable/placeholder"
+            app:strokeColor="@color/myFavLight"
+            app:strokeWidth="8dp" />
+
+        <LinearLayout
+            android:id="@+id/_addPostPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/option_background_file"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_photo_library_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Add Photo"
+                android:textColor="@color/myFavPink"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/_postSubmit"
+            android:layout_width="180dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            android:background="@drawable/button_background"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/myFavLight"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ProgressBar
+            android:id="@+id/_postProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/myFavPink"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+        android:id="@+id/_prePostView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:shimmer_demo_angle="20"
+        app:shimmer_demo_child_count="10"
+        app:shimmer_demo_grid_child_count="2"
+        app:shimmer_demo_layout="@layout/post_loading_layout"
+        app:shimmer_demo_layout_manager_type="linear_vertical" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/_timeLineAdView"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-8385601672345207/6603299737"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ProgressBar
+        android:id="@+id/_pLoadingProgress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminateTint="@color/myFavPink"
+        android:padding="120dp"
+        android:visibility="gone" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

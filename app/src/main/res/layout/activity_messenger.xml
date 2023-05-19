@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/myFavDark"
+    android:orientation="vertical"
+    tools:context=".Activities.MessengerActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/_preChatsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@color/myFavPink"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingTop="12dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="12dp"
+            android:scrollbars="horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="@+id/guideline4">
+
+            <TextView
+                android:id="@+id/_mTimerSmsText"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/option_background_file"
+                android:gravity="center"
+                android:text="Timer SMS"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/_mTimelineText"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/option_background_file"
+                android:gravity="center"
+                android:text="Timeline"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/_mMessengerText"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/clicked_background_file"
+                android:gravity="center"
+                android:text="Messenger"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/_mCallText"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/option_background_file"
+                android:gravity="center"
+                android:text="Calls"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/myFavDark"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/_mSearch"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:foregroundGravity="right"
+                    app:srcCompat="@drawable/ic_baseline_search_24" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/_chatText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Chats"
+                    android:textColor="@color/myFavPink"
+                    android:textSize="28dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/_callText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:alpha="0.6"
+                    android:gravity="center"
+                    android:text="Calls"
+                    android:textColor="@color/myFavPink"
+                    android:textSize="28dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_file"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/_chatView"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/myFavPink" />
+
+                <View
+                    android:id="@+id/_callView"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:alpha="0"
+                    android:background="@color/myFavPink" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/_mMenuIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="12dp"
+            android:layout_weight="1"
+            android:foregroundGravity="right"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+            app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scrollbars="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="1.0" />
+
+            <LinearLayout
+                android:id="@+id/_chatListLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                    android:id="@+id/_preChatListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollIndicators="top"
+                    android:scrollbarStyle="outsideOverlay"
+                    app:shimmer_demo_child_count="10"
+                    app:shimmer_demo_grid_child_count="2"
+                    app:shimmer_demo_layout="@layout/list_loading_layout"
+                    app:shimmer_demo_layout_manager_type="linear_vertical"
+                    app:shimmer_demo_angle="20"/>
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/messages_icon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/_callListLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:translationX="700dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline3"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/_chatListLayout">
+
+                <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                    android:id="@+id/_preCallsListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:shimmer_demo_child_count="10"
+                    app:shimmer_demo_grid_child_count="2"
+                    app:shimmer_demo_layout="@layout/list_loading_layout"
+                    app:shimmer_demo_layout_manager_type="linear_vertical"
+                    app:shimmer_demo_angle="20"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/_messageIcon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/option_background_file"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:srcCompat="@drawable/messages_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1" />
+
+        <LinearLayout
+            android:id="@+id/_mMenuLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            android:background="@drawable/background_file"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/_mMenuIcon"
+            app:layout_constraintTop_toTopOf="@+id/_mMenuIcon">
+
+            <TextView
+                android:id="@+id/_mEditProfile"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Edit Profile"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/myFavPink" />
+
+            <TextView
+                android:id="@+id/_mContactText"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Contact Us"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/myFavPink" />
+
+            <TextView
+                android:id="@+id/_mPrivacyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Privacy Policy"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/myFavPink" />
+
+            <TextView
+                android:id="@+id/_mTermsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Terms &amp; Conditions"
+                android:textColor="@color/myFavPink"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/_searchFriendLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/myFavLight"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/_mBackIcon"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="right"
+                android:layout_margin="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Search..."
+                android:inputType="textPersonName"
+                android:paddingLeft="16dp"
+                android:textColor="@color/myFavPink"
+                android:textColorHint="#E6D1C5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/_mBackIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+            android:id="@+id/_searchFriend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            app:shimmer_demo_child_count="10"
+            app:shimmer_demo_grid_child_count="2"
+            app:shimmer_demo_layout="@layout/list_loading_layout"
+            app:shimmer_demo_layout_manager_type="linear_vertical"
+            app:shimmer_demo_angle="20"/>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:alpha="1"
+    android:background="@color/myFavLight"
+    android:foregroundGravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="10dp"
+    app:layout_constraintEnd_toStartOf="@+id/guideline13"
+    app:layout_constraintStart_toStartOf="@+id/guideline12"
+    app:layout_constraintTop_toTopOf="@+id/guideline14"
+    tools:ignore="Suspicious0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/post_background_file"
+                android:padding="2dp"
+                android:src="@drawable/profile_placeholder"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:shapeAppearanceOverlay="@style/Circular"
+                app:strokeColor="@color/myFavDark"
+                app:strokeWidth="2dp"
+                tools:ignore="MissingConstraints" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/post_background_file"
+                    android:gravity="center_vertical" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/post_background_file"
+                    android:gravity="bottom" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/post_background_file" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/post_background_file"
+            android:padding="2dp" />
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

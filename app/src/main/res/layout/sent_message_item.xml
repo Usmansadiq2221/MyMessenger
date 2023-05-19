@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/message_sent_item"
+        android:gravity="right"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/_sendImage"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/message_sent_item"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:shapeAppearanceOverlay="@style/imageMessageShape"
+            app:srcCompat="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/_sentMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxWidth="300dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="3dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="3dp"
+            android:text="dgfdf fgd gfdgfdgfd fgd"
+            android:textColor="@color/myFavPink"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/_sentMessageTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="2dp"
+            android:text="TextView"
+            android:textColor="@color/myFavPink"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/_sImgDellProgress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:indeterminateTint="@color/myFavDark"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout6"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout6" />
+
+    <TextView
+        android:id="@+id/_textSeen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:text="Delivered"
+        android:textColor="@color/myFavPink"
+        android:textSize="11sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
+
+    <View
+        android:id="@+id/_sentViewItem"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.15"
+        android:background="@color/myFavPink"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

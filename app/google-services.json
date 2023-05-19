@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "697098637262",
+    "project_id": "my-messenger-b7735",
+    "storage_bucket": "my-messenger-b7735.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:697098637262:android:0eab2ada09fa594b87659f",
+        "android_client_info": {
+          "package_name": "com.devtwist.mymessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "697098637262-2unlrd53mud3k4i5ediguk35bqupbj53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARt7HS5w9NPUrgGpClO_xYC7eQ5WlYxP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "697098637262-2unlrd53mud3k4i5ediguk35bqupbj53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
